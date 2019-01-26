@@ -15,12 +15,9 @@ Installation
 
 Requirements
 ^^^^^^^^^^^^
+slackclient
+bs4
 
-Compatibility
--------------
-
-Licence
--------
 
 Authors
 -------
