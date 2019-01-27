@@ -14,9 +14,9 @@ def _add_poll_option(sc, timestamp, poll_opt):
 
 
 def post_menu(menu, poll_options):
-    sc = SlackClient(TOKEN)
-    print(menu, poll_options)
-    return
+    token = slack_api_token()
+    sc = SlackClient(token)
+
     reply = sc.api_call('chat.postMessage', channel=CHANNEL, text=menu)
     if not reply['ok']:
         raise RuntimeError(f"Could not post message to slack: {reply['error']}")
