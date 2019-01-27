@@ -1,6 +1,6 @@
 from slackclient import SlackClient
 
-from config import slack_api_token
+from lunchbot.config import slack_api_token
 
 
 CHANNEL = 'UF484D7Q8'

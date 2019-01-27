@@ -1,7 +1,7 @@
 from datetime import datetime
-from scrape_mensa import read_day_menu
-from slack_api import post_menu
 
+from lunchbot.scrape_mensa import read_day_menu
+from lunchbot.slack_api import post_menu
 
 DIGITS = ('zero', 'one', 'two', 'three', 'four',
           'five', 'six', 'seven', 'eight', 'nine')
