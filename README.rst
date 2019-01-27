@@ -13,22 +13,22 @@ Python project. So don't feel tempted to question the usefulness of the code :)
 Installation
 ------------
 
-```
-git clone https://github.com/lumbric/lunchbot.git
-cd lunchbot
-virtualenv -p python3 env && source env/bin/activate  # optional
-pip3 install -r requirements.txt
-python3 setup.py install
-```
+.. sourcecode:: bash
+
+    git clone https://github.com/lumbric/lunchbot.git
+    cd lunchbot
+    virtualenv -p python3 env && source env/bin/activate  # optional
+    pip3 install -r requirements.txt
+    python3 setup.py install
 
 Configuration
 ^^^^^^^^^^^^^
 
 Add a Slack API token for your bot to `secrets.yml <config/secrets.yml>`_:
 
-```
-slack_api_token: 'xoxb-...'
-```
+.. sourcecode:: yml
+
+    slack_api_token: 'xoxb-...'
 
 Note that this should be a `bot user token <https://api.slack.com/docs/token-types#bot>`_,
 starting with `xoxb-`, otherwise the reactions will be added using your Slack
@@ -42,9 +42,9 @@ Tests
 
 After cloning GIT repository run:
 
-```
-tox
-```
+.. sourcecode:: bash
+
+    tox
 
 Tox will create its own venv environment.
 
@@ -53,9 +53,9 @@ Usage
 
 Run the command
 
-```
-lunchbot
-```
+.. sourcecode:: bash
+
+    lunchbot
 
 ...to post the daily Mensa menu to your slack channel. There are no additional
 options yet. The bot will add each poll option as reaction, so other users can
