@@ -37,6 +37,15 @@ user and you won't be able to vote using reactions.
 Follow the `Slack instructions <https://api.slack.com/bot-users#creating-bot-user>`_
 to create the bot user.
 
+Docker
+^^^^^^
+
+.. sourcecode:: bash
+
+    cd lunchbot
+    docker build -t lunchbot .
+    docker run -d --name lunchbot lunchbot
+
 Tests
 ^^^^^
 
