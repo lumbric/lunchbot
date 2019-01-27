@@ -1,6 +1,6 @@
 from slackclient import SlackClient
 
-from lunchbot.config import slack_api_token
+from lunchbot.config import slack_bot_token
 
 
 CHANNEL = 'UF484D7Q8'
@@ -15,7 +15,7 @@ def _add_poll_option(sc, timestamp, poll_opt):
 
 
 def post_menu(menu, poll_options):
-    token = slack_api_token()
+    token = slack_bot_token()
     sc = SlackClient(token)
 
     reply = sc.api_call('chat.postMessage', channel=CHANNEL, text=menu)

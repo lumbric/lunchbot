@@ -35,8 +35,8 @@ def _get_cfg_dir():
                            "(search paths: {config_file_paths})")
 
 
-def slack_api_token():
+def slack_bot_token():
     fname = op.join(_get_cfg_dir(), 'secrets.yml')
     with open(fname, 'r') as f:
         secrets = yaml.load(f.read())
-    return secrets['slack_api_token']
+    return secrets['slack_bot_token']

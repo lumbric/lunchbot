@@ -28,7 +28,7 @@ Add a Slack API token for your bot to `secrets.yml <config/secrets.yml>`_:
 
 .. sourcecode:: yml
 
-    slack_api_token: 'xoxb-...'
+    slack_bot_token: 'xoxb-...'
 
 Note that this should be a `bot user token <https://api.slack.com/docs/token-types#bot>`_,
 starting with `xoxb-`, otherwise the reactions will be added using your Slack
