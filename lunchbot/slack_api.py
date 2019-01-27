@@ -1,7 +1,8 @@
 from slackclient import SlackClient
 
+from config import slack_api_token
 
-TOKEN = 'snip'
+
 CHANNEL = 'UF484D7Q8'
 #CHANNEL = 'CFKP93MSN'   # lunch channel
 
