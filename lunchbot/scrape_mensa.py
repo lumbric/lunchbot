@@ -71,20 +71,20 @@ def parse_menu(page, date, categories):
     # replace new lines with spaces
     foods = [" ".join(food.split()) for food in foods]
 
-    day_menu_food_str = "\n".join(
-        f"{food} {price}" for food, price in zip(foods, prices))
+    day_menu_food_items = [f"{food} {price}"
+                         for food, price in zip(foods, prices)]
 
-    return day_menu_food_str
+    return day_menu_food_items
 
 
 def read_day_menu(date):
-    menus = ''
+    menus = {}
     for name, menu_params in MENU_PARAMS.items():
         page = read_page(menu_params['uri'])
         menu = parse_menu(page=page, date=date,
                           categories=menu_params['categories'])
 
-        menus += f"**{name}**\n{menu}\n\n"
+        menus[name] = menu
     return menus
 
 
