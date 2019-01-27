@@ -2,9 +2,11 @@ from slackclient import SlackClient
 
 from lunchbot.config import slack_bot_token
 
+# test channel (slackbot)
+#CHANNEL = 'UF484D7Q8'
 
-CHANNEL = 'UF484D7Q8'
-#CHANNEL = 'CFKP93MSN'   # lunch channel
+# lunch channel
+CHANNEL = 'CFKP93MSN'
 
 
 def _add_poll_option(sc, timestamp, poll_opt):
