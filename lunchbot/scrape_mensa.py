@@ -39,7 +39,8 @@ def parse_menu(page, date, categories):
     date_str = date.strftime('%d.%m.%Y')
     date_tag = menu.find(class_='date', string=date_str)
     if date_tag is None:
-        raise RuntimeError(f"No menu found for date={date_str}")
+        return("['Closed today € 0,0']")
+        #raise RuntimeError(f"No menu found for date={date_str}")
     day_menu = date_tag.parent
 
     day_menu_food = bs4.Tag(name='div')
@@ -54,7 +55,7 @@ def parse_menu(page, date, categories):
         'Wir möchten',
         'Unser Umweltzeichen',
         'Produkte vom heimischen',
-        'Wir verwendent erstklassige',
+        'Wir verwenden erstklassige',
         '\*\*\*',
         '\*',
     )
@@ -90,6 +91,6 @@ def read_day_menu(date):
 
 if __name__ == '__main__':
     from datetime import datetime
-    day_menu = read_day_menu(datetime(2019, 1, 29))
+    day_menu = read_day_menu(datetime(2019, 2, 13))
     print(day_menu)
 
