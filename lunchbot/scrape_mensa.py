@@ -1,5 +1,6 @@
 import re
 import bs4
+import logging
 import requests
 
 
@@ -17,6 +18,9 @@ MENU_PARAMS = {
     # Maybe also useful as paramters:
     #http://menu.mensen.at/index/index/?locid=8&woy=4&year=2017
 }
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 def read_page(uri):
@@ -81,10 +85,17 @@ def read_day_menu(date):
     menus = {}
     for name, menu_params in MENU_PARAMS.items():
         page = read_page(menu_params['uri'])
-        menu = parse_menu(page=page, date=date,
-                          categories=menu_params['categories'])
+        try:
+            menu = parse_menu(page=page, date=date,
+                            categories=menu_params['categories'])
+        except Exception as e:
+            LOGGER.error(f"Failed to parse menu for {name}: {e}")
+        else:
+            menus[name] = menu
 
-        menus[name] = menu
+    if not menus:
+        raise RuntimeError("Could not parse any menu.")
+
     return menus
 
 
