@@ -1,2 +1,2 @@
 # m h dom mon dow user	command
-30 9 * * 1-5    root   /usr/local/bin/lunchbot > /var/log/lunchbot.log 2>&1
+30 9 * * 1-5    root   /usr/local/bin/lunchbot >> /var/log/lunchbot.log 2>&1
