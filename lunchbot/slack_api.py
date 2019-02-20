@@ -1,5 +1,5 @@
+import time
 from slackclient import SlackClient
-
 from lunchbot.config import slack_bot_token
 
 # test channel (slackbot)
@@ -27,4 +27,5 @@ def post_menu(menu, poll_options):
     timestamp = reply['ts']
 
     for poll_opt in poll_options:
+        time.sleep(0.5)  # should help to get poll options ordered
         _add_poll_option(sc, timestamp, poll_opt)
