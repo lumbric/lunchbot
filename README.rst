@@ -44,7 +44,7 @@ Docker
 
     cd lunchbot
     docker build -t lunchbot .
-    docker run -d --name lunchbot lunchbot
+    docker run -v /etc/localtime:/etc/localtime -v /etc/timezone:/etc/timezone -d --name lunchbot lunchbot
 
 Tests
 ^^^^^
