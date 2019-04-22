@@ -1,8 +1,9 @@
+|build| |license|
 
-.. image:: https://img.shields.io/travis/lumbric/lunchbot.svg
+.. |build| image:: https://img.shields.io/travis/lumbric/lunchbot.svg
    :target: https://travis-ci.org/lumbric/lunchbot
    :alt: Latest Travis CI build status
-.. image:: https://img.shields.io/github/license/lumbric/lunchbot.svg
+.. |license| image:: https://img.shields.io/github/license/lumbric/lunchbot.svg
    :alt: License
 
 lunchbot
