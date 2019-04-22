@@ -1,9 +1,12 @@
-lunchbot
-========
 
-.. image:: https://travis-ci.org/lumbric/lunchbot.png
+.. image:: https://img.shields.io/travis/lumbric/lunchbot.svg
    :target: https://travis-ci.org/lumbric/lunchbot
    :alt: Latest Travis CI build status
+.. image:: https://img.shields.io/github/license/lumbric/lunchbot.svg
+   :alt: License
+
+lunchbot
+========
 
 Provide lunch menu information and vote for options via slack integration.
 
