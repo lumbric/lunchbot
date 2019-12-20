@@ -4,11 +4,12 @@ import requests
 from lunchbot.scrape_mensa import parse_menu
 from lunchbot.scrape_mensa import read_page
 from lunchbot.scrape_mensa import MENU_PARAMS
+from lunchbot.scrape_mensa import URI
 
 
 def test_read_menu_page():
     # needs internet, needs menu to be online... hm...
-    assert read_page(list(MENU_PARAMS.values())[0]['uri'])
+    assert read_page(URI)
 
 
 def test_failing_read_menu_page():
