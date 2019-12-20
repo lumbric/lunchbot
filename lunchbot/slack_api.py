@@ -16,7 +16,7 @@ def _add_poll_option(sc, timestamp, poll_opt):
         raise RuntimeError(f"Could not post message to slack: {reply['error']}")
 
 
-def post_menu(menu, poll_options):
+def post_menu(menu):
     token = slack_bot_token()
     sc = SlackClient(token)
 
@@ -24,8 +24,3 @@ def post_menu(menu, poll_options):
     if not reply['ok']:
         raise RuntimeError(f"Could not post message to slack: {reply['error']}")
 
-    timestamp = reply['ts']
-
-    for poll_opt in poll_options:
-        time.sleep(2.)  # should help to get poll options ordered
-        _add_poll_option(sc, timestamp, poll_opt)
