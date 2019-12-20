@@ -16,6 +16,12 @@ MENU_PARAMS = {
 }
 
 
+VEGY_TYPES = {
+    'vegan': ':sweet_potato:',
+    'vegetarisch': ':cucumber:',
+}
+
+
 LOGGER = logging.getLogger(__name__)
 
 
@@ -117,6 +123,13 @@ def parse_menu(page, date):
                 tag.parent.decompose()
 
     menu_of_day_items = []
+
+    for vegy_type, v_symbol_name in VEGY_TYPES.items():
+        for meal in menu_of_day:
+            for v_image in meal.find_all('img', alt=vegy_type):
+                v_symbol = menu.new_tag('p')
+                v_symbol.string = v_symbol_name
+                v_image.replace_with(v_symbol)
 
     # note: meal might contain multiple items/prices
     for meal in menu_of_day:
