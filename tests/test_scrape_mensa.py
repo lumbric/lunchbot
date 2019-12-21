@@ -14,9 +14,4 @@ def test_read_menu_page():
 
 def test_failing_read_menu_page():
     with pytest.raises(requests.exceptions.HTTPError, match="500 Server Error"):
-        assert read_page('http://menu.mensen.at/WRONG_URI')
-
-
-def test_parse_menu():
-    pass
-    #assert parse_menu()
+        read_page('http://menu.mensen.at/WRONG_URI')
