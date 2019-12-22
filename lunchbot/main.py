@@ -27,14 +27,11 @@ def format_menus(menus):
     # In theory this could be very large and produce a harmful message, but let's trust on slack
     # here and not care too much.
 
-    menu = ''
-    for name, items in menus.items():
-        menu += f"\n*{filter_malicious(name)}*\n"
-        menu += "".join(f" - {filter_malicious(item)}\n" for item in items)
-
-    # menu contains a leading and trailing new line, but slack doesn't care
-
-    return menu
+    return "\n\n".join(
+            f"*{filter_malicious(name)}*\n" +
+            "\n".join(f" - {filter_malicious(item)}" for item in items)
+            for name, items in menus.items()
+        )
 
 
 def main():

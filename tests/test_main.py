@@ -19,5 +19,5 @@ def test_format_menus(menus):
     assert (
         format_menus(menus)
         ==
-        '\n*mensa_a*\n - spam\n - eggs\n\n*mensa_b*\n - eggs and spam\n'
+        '*mensa_a*\n - spam\n - eggs\n\n*mensa_b*\n - eggs and spam'
     )
