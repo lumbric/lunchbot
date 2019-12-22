@@ -14,3 +14,10 @@ def test_filter_malicious():
     assert filter_malicious('\\evilcommand') == 'evilcommand'
     assert filter_malicious('*evilcommand*') == 'evilcommand'
 
+
+def test_format_menus(menus):
+    assert (
+        format_menus(menus)
+        ==
+        '\n*mensa_a*\n - spam\n - eggs\n\n*mensa_b*\n - eggs and spam\n'
+    )
