@@ -2,6 +2,7 @@ import re
 import bs4
 import logging
 import requests
+import datetime
 
 
 URI = 'https://mensen.at/'
@@ -32,7 +33,7 @@ def read_page(uri, cookies=None):
     return page.text
 
 
-def parse_menu(page, date):
+def parse_menu(page: str, date: datetime.date):
     """Parses ``page`` (html as string), tries to find the correct link for date, get the index
     and then parse the menu with this index.
 
@@ -147,7 +148,7 @@ def parse_menu(page, date):
     return menu_of_day_items
 
 
-def read_day_menu(date):
+def read_day_menu(date: datetime.date):
     menus = {}
     for name, menu_params in MENU_PARAMS.items():
         page = read_page(URI, cookies={'mensenExtLocation': menu_params['location_id']})
@@ -166,8 +167,7 @@ def read_day_menu(date):
 
 
 if __name__ == '__main__':
-    from datetime import datetime
-    day_menu = read_day_menu(datetime(2019, 12, 18))
+    day_menu = read_day_menu(datetime.date(2019, 12, 18))
 
     for location, menu in day_menu.items():
         print(f"{location}: ")
