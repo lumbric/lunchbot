@@ -8,7 +8,7 @@ import datetime
 URI = 'https://mensen.at/'
 MENU_PARAMS = {
     'BOKU Wien Peter-Jordan-Straße': {
-        'location_id': '6',
+        'location_id': '65',
     },
 
     'BOKU Wien M-Cafe Mendel': {
