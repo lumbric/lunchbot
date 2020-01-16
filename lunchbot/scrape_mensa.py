@@ -167,7 +167,7 @@ def read_day_menu(date: datetime.date):
 
 
 if __name__ == '__main__':
-    day_menu = read_day_menu(datetime.date(2019, 12, 18))
+    day_menu = read_day_menu(datetime.datetime.today())
 
     for location, menu in day_menu.items():
         print(f"{location}: ")
