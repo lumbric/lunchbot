@@ -28,7 +28,7 @@ def generate_test_html(
     )
 
     menu = (
-            '<div class="menu-plan">' +
+            '<div><div><div class="menu-plan">' +
             "\n".join(dedent(f"""
                 <span class="menu-item-{day_index}">
                     {food}
@@ -36,7 +36,7 @@ def generate_test_html(
                 </span>""")
                 for food, price in items
             ) +
-            '</div>'
+            '</div></div></div>'
     )
 
     return navigation + "\n\n" + menu

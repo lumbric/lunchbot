@@ -72,12 +72,13 @@ def parse_menu(page: str, date: datetime.date):
 
     date_idx, = date_idcs
 
-    menu_of_day = menu.select(f'.menu-plan .menu-item-{date_idx}')
+    menu_of_day = menu.select(f':not(.d-md-none) > div > .menu-plan .menu-item-{date_idx}')
 
     # first filter complete sections wrapped in <div class="menu-item ...>
     FILTER_SECTION_BLACKLIST_REGEX = (
         'Frühstück',
     )
+
     def is_blacklisted(meal):
         return any(meal.find_all(string=re.compile(pattern))
                    for pattern in FILTER_SECTION_BLACKLIST_REGEX)
