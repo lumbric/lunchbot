@@ -93,6 +93,7 @@ def parse_menu(page: str, date: datetime.date):
         #'Unser Wochenangebot',
         #'in bisserl mehr sein',
         'Tagesteller',
+        'Unsere Tagesgerichte',
         'Unser Wochenangebot',
         'Aus unserer My Mensa-Soup',
         'darauf hinweisen, dass wir vorwiegend Produkte vom',
