@@ -15,6 +15,9 @@ Provide lunch menu information and vote for options via slack integration.
 Note that this is mostly a toy project to test all the tooling required for a
 Python project. So don't feel tempted to question the usefulness of the code :)
 
+.. image:: screenshot_version2.png
+   :alt: Screenshot of Slack message
+
 Installation
 ------------
 
