@@ -1,2 +1,5 @@
-# m h dom mon dow user	command
-30 9 * * 1-5    root   /usr/local/bin/lunchbot >> /var/log/lunchbot.log 2>&1
+# m h dom mon dow command
+# Note: add a user if you want to use this file in /etc/crontab or /etc/cron.d, this line is meant
+# to be installed using the command crontab.
+30 9 * * 1-5    /usr/local/bin/lunchbot >> /var/log/lunchbot.log 2>&1
+

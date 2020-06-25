@@ -14,10 +14,8 @@ COPY config/secrets.yml /etc/lunchbot/
 WORKDIR /tmp/lunchbot
 RUN python3 setup.py install
 
-# add crontab
-ADD config/crontab /etc/cron.d/lunchbot
-RUN chmod 0644 /etc/cron.d/lunchbot
-RUN crontab /etc/cron.d/lunchbot
-
 RUN touch /var/log/cron.log
-CMD cron && tail -f /var/log/cron.log
+
+# no idea why, but as it seems with our current proxmox / LXC setup the crontab command does not
+# seem to work when run at build time... Workaround: run it add run time.
+CMD crontab /tmp/lunchbot/config/crontab && cron && tail -f /var/log/cron.log
