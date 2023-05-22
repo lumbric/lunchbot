@@ -1,4 +1,4 @@
 beautifulsoup4==4.7.1
-requests==2.21.0
+requests==2.31.0
 PyYAML>=4.2b
 slackclient==1.3.0
